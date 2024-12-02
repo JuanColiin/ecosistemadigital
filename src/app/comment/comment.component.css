@@ -119,7 +119,14 @@ button:active {
 }
 
 .comment .delete-btn:hover {
-  background-color: #e53935; /* Rojo más oscuro */
+  background-color: #f44336; /* Rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 10px; /* Ajustamos el tamaño del botón */
+  cursor: pointer;
+  font-size: 12px; /* Botón más pequeño */
+  transition: all 0.3s ease;
 }
 
 .comment .delete-btn:active {

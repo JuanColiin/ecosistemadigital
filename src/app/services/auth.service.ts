@@ -1,6 +1,8 @@
+// services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { RegistroForm } from '../models/registro.model'; // Usamos el tipo de datos
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   // Método para registrar un nuevo usuario
-  register(userData: any): Observable<any> {
+  register(userData: RegistroForm): Observable<any> {  // Usamos el tipo RegistroForm para mayor consistencia
     return this.http.post(this.apiUrlRegister, userData);
   }
 

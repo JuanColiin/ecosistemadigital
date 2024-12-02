@@ -1,11 +1,11 @@
 <div class="detalle-container" *ngIf="!loading; else cargando">
   <img
-    [src]="project?.image"
-    [alt]="project?.title || 'Imagen del proyecto'"
+    [src]="project?.picture"
+    [alt]="project?.name || 'Imagen del proyecto'"
     class="detalle-image"
   />
   <div class="detalle-content">
-    <h2 class="detalle-title">{{ project?.title }}</h2>
+    <h2 class="detalle-title">{{ project?.name }}</h2>
     <p class="detalle-category">{{ project?.category }}</p>
     <p class="detalle-description">{{ project?.description }}</p>
     <button class="btn-volver" (click)="volver()">Volver</button>

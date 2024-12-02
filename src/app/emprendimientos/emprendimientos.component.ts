@@ -9,14 +9,16 @@ import { ApiService } from '../services/api.service';
 })
 export class EmprendimientosComponent implements OnInit {
 
-  emprendimientosList: IProject[] = [] ;
-
+  emprendimientosList: IProject[] = [];
 
   constructor(private _apiService: ApiService) { }
 
   ngOnInit(): void {
     this._apiService.getAllEmprendimientos().subscribe((data: IProject[]) => {
+      console.log('Datos recibidos: ', data);  // Verificar si estamos recibiendo los datos
       this.emprendimientosList = data;
-    })
+    }, error => {
+      console.error('Error al cargar los proyectos: ', error);  // Verificar si hay algún error
+    });
   }
 }

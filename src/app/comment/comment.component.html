@@ -8,19 +8,31 @@
   <!-- Listado de comentarios -->
   <div *ngFor="let comment of comments" class="comment">
     <p>
-      <strong class="author">{{ comment.author.name }}:</strong>
+      <strong class="author">{{ comment.author_name || 'Desconocido' }}:</strong>
       <span class="text">{{ comment.text }}</span>
     </p>
     <button class="delete-btn" (click)="deleteComment(comment.id)">Eliminar</button>
+    <button class="edit-btn" (click)="edit(comment)">Editar</button>
   </div>
 
   <!-- Formulario para agregar un nuevo comentario -->
-  <div class="form-container">
+  <div class="form-container" *ngIf="!editingComment">
     <input
       type="text"
       [(ngModel)]="newCommentText"
       placeholder="Escribe tu comentario"
     />
     <button (click)="createComment()">Publicar Comentario</button>
+  </div>
+
+  <!-- Formulario de edición de comentario -->
+  <div *ngIf="editingComment" class="edit-form">
+    <input
+      type="text"
+      [(ngModel)]="editingComment.text"
+      placeholder="Edita tu comentario"
+    />
+    <button (click)="saveEdit()">Guardar</button>
+    <button (click)="cancelEdit()">Cancelar</button>
   </div>
 </div>

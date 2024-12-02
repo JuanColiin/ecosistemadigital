@@ -1,14 +1,11 @@
 export interface IProject {
-  id:          number;
-  title:       string;
-  price:       number;
-  description: string;
-  category:    string;
-  image:       string;
-  rating:      Rating;
-}
-
-export interface Rating {
-  rate:  number;
-  count: number;
+  id:           number;
+  name:         string;
+  description:  string;
+  category:     string;
+  city:         string;
+  picture:      string;
+  pushingName:  null;
+  pushingEmail: null;
+  comments:     null;
 }

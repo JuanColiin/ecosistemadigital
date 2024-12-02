@@ -5,7 +5,7 @@ import { IProject } from '../models/project.model';
 
 @Component({
   selector: 'app-emprendimiento-detalle',
-  templateUrl: './emprendimiento-detalle.component.html',
+  templateUrl:'./emprendimiento-detalle.component.html',
   styleUrls: ['./emprendimiento-detalle.component.css']
 })
 export class EmprendimientoDetalleComponent implements OnInit {
@@ -41,7 +41,7 @@ export class EmprendimientoDetalleComponent implements OnInit {
   cargarProyecto(id: number): void {
     this.apiService.getEmprendimiento(id).subscribe({
       next: (data: IProject) => {
-        console.log('URL de la imagen:', data.image); // Verifica la URL de la imagen
+        console.log('URL de la imagen:', data.picture); // Verifica la URL de la imagen
         this.project = data;
         this.loading = false;
       },
@@ -52,7 +52,7 @@ export class EmprendimientoDetalleComponent implements OnInit {
     });
   }
 
-  
+
 
 
 
